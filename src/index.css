@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-void: #050608;
+  --color-surface: #0c0e14;
+  --color-raised: #13161f;
+  --color-border: #252a38;
+  --color-muted: #8b92a8;
+  --color-fg: #e8eaf2;
+  --color-signal: #e8a838;
+  --color-signal-dim: #c4922e;
+  --color-mint: #34d399;
+  --color-iris: #818cf8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-svh bg-void text-fg antialiased;
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-signal) 35%, transparent);
+    color: var(--color-void);
+  }
+}
+
+/* Fine grid + vignette */
+.bg-radar {
+  background-color: var(--color-void);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, color-mix(in srgb, var(--color-signal) 12%, transparent), transparent),
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+@keyframes scanline {
+  0% {
+    opacity: 0.03;
+  }
+  50% {
+    opacity: 0.07;
+  }
+  100% {
+    opacity: 0.03;
+  }
+}
+
+.scanlines::after {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    color-mix(in srgb, var(--color-fg) 4%, transparent) 2px,
+    color-mix(in srgb, var(--color-fg) 4%, transparent) 3px
+  );
+  animation: scanline 8s ease-in-out infinite;
+  z-index: 50;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scanlines::after {
+    animation: none;
+    opacity: 0.02;
+  }
+}
