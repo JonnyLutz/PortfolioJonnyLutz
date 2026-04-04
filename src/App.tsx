@@ -1,29 +1,34 @@
-import { Nav } from './components/Nav'
-import { Hero } from './components/Hero'
-import { LabBento } from './components/LabBento'
-import { SignalStrip } from './components/SignalStrip'
-import { WorkGrid } from './components/WorkGrid'
-import { Contact } from './components/Contact'
-import { SiteFooter } from './components/SiteFooter'
+import { Toaster } from 'sonner'
+import { site } from './content/site'
+import { Sidebar } from './components/Sidebar'
+import { MobileNav } from './components/MobileNav'
+import { AboutSection } from './components/AboutSection'
+import { ExperienceSection } from './components/ExperienceSection'
+import { ProjectsSection } from './components/ProjectsSection'
+import { ContactSection } from './components/ContactSection'
 
 function App() {
   return (
-    <div className="bg-radar scanlines min-h-svh">
+    <div className="min-h-svh">
+      <Toaster theme="dark" position="top-center" richColors />
       <a
-        href="#top"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-16 focus:z-[100] focus:rounded-md focus:bg-signal focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-void"
+        href="#about"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-navy-light focus:px-3 focus:py-2 focus:text-sm focus:font-medium focus:text-green focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-green"
       >
         Skip to content
       </a>
-      <Nav />
-      <main>
-        <Hero />
-        <LabBento />
-        <SignalStrip />
-        <WorkGrid />
-        <Contact />
-      </main>
-      <SiteFooter />
+      <MobileNav />
+      <div className="mx-auto max-w-6xl px-6 lg:flex lg:gap-16 lg:px-12 xl:gap-24 xl:px-24">
+        <div className="lg:w-[38%] lg:max-w-[320px] lg:shrink-0">
+          <Sidebar />
+        </div>
+        <main className="min-w-0 flex-1 pb-16 pt-8 lg:max-w-3xl lg:py-24 xl:max-w-4xl">
+          <AboutSection />
+          <ExperienceSection />
+          {site.showProjectsSection ? <ProjectsSection /> : null}
+          <ContactSection />
+        </main>
+      </div>
     </div>
   )
 }

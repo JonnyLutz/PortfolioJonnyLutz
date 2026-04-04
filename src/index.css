@@ -1,19 +1,18 @@
 @import 'tailwindcss';
 
+/* Brittany Chiang–inspired palette: deep navy, slate text, teal accents */
 @theme {
-  --font-sans: 'Sora', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Menlo', monospace;
 
-  --color-void: #050608;
-  --color-surface: #0c0e14;
-  --color-raised: #13161f;
-  --color-border: #252a38;
-  --color-muted: #8b92a8;
-  --color-fg: #e8eaf2;
-  --color-signal: #e8a838;
-  --color-signal-dim: #c4922e;
-  --color-mint: #34d399;
-  --color-iris: #818cf8;
+  --color-navy: #0a192f;
+  --color-navy-light: #112240;
+  --color-slate-light: #ccd6f6;
+  --color-slate: #8892b0;
+  --color-green: #64ffda;
+  --color-green-dim: #57cbb7;
+  /* Pop slightly above base green for hovers / emphasis */
+  --color-green-bright: #8dfff0;
 }
 
 @layer base {
@@ -22,57 +21,14 @@
   }
 
   body {
-    @apply m-0 min-h-svh bg-void text-fg antialiased;
+    @apply m-0 min-h-svh bg-navy text-slate antialiased;
     font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-signal) 35%, transparent);
-    color: var(--color-void);
-  }
-}
-
-/* Fine grid + vignette */
-.bg-radar {
-  background-color: var(--color-void);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, color-mix(in srgb, var(--color-signal) 12%, transparent), transparent),
-    linear-gradient(var(--color-border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
-  background-size: 100% 100%, 48px 48px, 48px 48px;
-}
-
-@keyframes scanline {
-  0% {
-    opacity: 0.03;
-  }
-  50% {
-    opacity: 0.07;
-  }
-  100% {
-    opacity: 0.03;
-  }
-}
-
-.scanlines::after {
-  content: '';
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    color-mix(in srgb, var(--color-fg) 4%, transparent) 2px,
-    color-mix(in srgb, var(--color-fg) 4%, transparent) 3px
-  );
-  animation: scanline 8s ease-in-out infinite;
-  z-index: 50;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scanlines::after {
-    animation: none;
-    opacity: 0.02;
+    background: color-mix(in srgb, var(--color-green) 22%, transparent);
+    color: var(--color-navy);
   }
 }
