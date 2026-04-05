@@ -16,3 +16,5 @@ To ship this design to your domain, build and deploy **this** repo’s `dist/` (
 Copy lives in `src/content/site.ts` (about, experience, projects, contact).
 
 **Contact form:** set `VITE_FORMSPREE_URL` or `VITE_CONTACT_FORM_URL` in `.env` (see `.env.example`) — same options as the previous portfolio (Formspree or Lambda + SES).
+
+<!-- Test comment for jlutz
