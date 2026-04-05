@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '../context/ThemeContext'
 
 const BG_IMAGES = [
   '/image.png',
@@ -9,6 +10,8 @@ const BG_IMAGES = [
 
 export function BgPicker() {
   const [active, setActive] = useState(0)
+  const { theme } = useTheme()
+  const isLight = theme === 'light'
 
   return (
     <>
@@ -21,8 +24,8 @@ export function BgPicker() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          opacity: 0.06,
-          mixBlendMode: 'luminosity',
+          opacity: isLight ? 0.045 : 0.06,
+          mixBlendMode: isLight ? 'multiply' : 'luminosity',
         }}
       />
 

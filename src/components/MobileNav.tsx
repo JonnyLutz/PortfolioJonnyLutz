@@ -13,7 +13,7 @@ export function MobileNav() {
 
   return (
     <nav
-      className="sticky top-0 z-10 border-b border-white/5 bg-navy/90 px-6 py-3 backdrop-blur-md lg:hidden"
+      className="sticky top-0 z-10 border-b border-slate/20 bg-navy-light/90 px-6 py-3 backdrop-blur-md lg:hidden"
       aria-label="In-page"
     >
       <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-slate">

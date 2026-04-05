@@ -1,4 +1,5 @@
 import { site } from '../content/site'
+import { useBadgeColor } from '../context/BadgeColorContext'
 
 export type ProjectItem = {
   title: string
@@ -11,8 +12,13 @@ export type ProjectItem = {
 }
 
 function TechPill({ label }: { label: string }) {
+  const { scheme } = useBadgeColor()
   return (
-    <span className="mr-1.5 mb-1 inline-block rounded-full border border-slate/40 px-3 py-1 text-xs text-slate">{label}</span>
+    <span
+      className={`mr-1.5 mb-1 inline-block rounded-full border border-slate/25 px-3 py-1 text-xs font-medium ${scheme.tagPill}`}
+    >
+      {label}
+    </span>
   )
 }
 
@@ -22,7 +28,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
   return (
     <article className="group flex flex-col gap-4 sm:flex-row sm:gap-6">
       {hasImage ? (
-        <div className="aspect-video w-full shrink-0 overflow-hidden rounded border border-white/10 sm:aspect-square sm:w-32 sm:max-w-[8rem]">
+        <div className="aspect-video w-full shrink-0 overflow-hidden rounded border border-slate/25 sm:aspect-square sm:w-32 sm:max-w-[8rem]">
           <img
             src={project.image}
             alt={project.imageAlt!}
@@ -34,7 +40,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
         </div>
       ) : (
         <div
-          className="flex aspect-video w-full shrink-0 items-center justify-center rounded border border-white/5 bg-navy-light px-3 text-center sm:aspect-square sm:w-32 sm:max-w-[8rem]"
+          className="flex aspect-video w-full shrink-0 items-center justify-center rounded border border-slate/20 bg-navy-light px-3 text-center sm:aspect-square sm:w-32 sm:max-w-[8rem]"
           aria-hidden
         >
           <span className="font-mono text-[10px] leading-snug text-slate/70">Image · soon</span>
@@ -70,11 +76,12 @@ function ProjectCard({ project }: { project: ProjectItem }) {
 }
 
 export function ProjectsSection() {
+  const { scheme } = useBadgeColor()
   return (
     <section id="projects" className="mb-16 scroll-mt-24 lg:mb-24" aria-labelledby="projects-heading">
       <h2
         id="projects-heading"
-        className="border-l-2 border-orange/60 pl-4 text-sm font-bold uppercase tracking-[0.14em] text-slate-light"
+        className={`border-l-2 pl-4 text-sm font-bold uppercase tracking-[0.14em] text-slate-light ${scheme.headingBorder}`}
       >
         Projects
       </h2>

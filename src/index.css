@@ -18,6 +18,29 @@
   --color-orange: #ff2a6d;
   --color-orange-dim: #e01e5c;
   --color-orange-bright: #ff6b9d;
+  --color-violet: #b47cff;
+  --color-violet-dim: #9333ea;
+  --color-violet-bright: #d4b8ff;
+}
+
+/* Light mode: flip semantic tokens when html.light is set (ThemeToggle) */
+html.light {
+  --color-navy: #e2eaf5;
+  --color-navy-light: #ffffff;
+  --color-slate-light: #0c1220;
+  --color-slate: #4a6278;
+  --color-green: #009f78;
+  --color-green-dim: #008a68;
+  --color-green-bright: #00c090;
+  --color-blue: #0092a8;
+  --color-blue-dim: #007a8c;
+  --color-blue-bright: #00b4cc;
+  --color-orange: #d4205c;
+  --color-orange-dim: #b81a4e;
+  --color-orange-bright: #e03d6e;
+  --color-violet: #6d28d9;
+  --color-violet-dim: #5b21b6;
+  --color-violet-bright: #8b5cf6;
 }
 
 @layer base {
@@ -48,5 +71,19 @@
   ::selection {
     background: color-mix(in srgb, var(--color-blue) 35%, transparent);
     color: var(--color-navy);
+  }
+
+  html.light body {
+    background: linear-gradient(
+      165deg,
+      #d4e2f2 0%,
+      var(--color-navy) 42%,
+      #f2f6fb 100%
+    );
+  }
+
+  html.light ::selection {
+    background: color-mix(in srgb, var(--color-blue) 28%, transparent);
+    color: var(--color-slate-light);
   }
 }

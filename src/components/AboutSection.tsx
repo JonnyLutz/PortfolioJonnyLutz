@@ -1,6 +1,8 @@
 import { site } from '../content/site'
+import { useBadgeColor } from '../context/BadgeColorContext'
 
 export function AboutSection() {
+  const { scheme } = useBadgeColor()
   return (
     <section id="about" className="mb-16 scroll-mt-24 lg:mb-24" aria-labelledby="about-heading">
       <h2 id="about-heading" className="sr-only">
@@ -16,13 +18,13 @@ export function AboutSection() {
       </div>
 
       <div className="mt-16 flex items-center gap-4" aria-hidden>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-white/10" />
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="h-4 w-4 shrink-0 text-orange/50">
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate/20 to-slate/20" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className={`h-4 w-4 shrink-0 ${scheme.subtleIcon}`}>
           <circle cx="12" cy="12" r="2" />
           <circle cx="5" cy="12" r="1" />
           <circle cx="19" cy="12" r="1" />
         </svg>
-        <div className="h-px flex-1 bg-gradient-to-l from-transparent via-white/10 to-white/10" />
+        <div className="h-px flex-1 bg-gradient-to-l from-transparent via-slate/20 to-slate/20" />
       </div>
     </section>
   )

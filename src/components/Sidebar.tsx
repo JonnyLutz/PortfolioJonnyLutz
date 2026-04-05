@@ -71,7 +71,7 @@ export function Sidebar() {
         <div className="mb-6 flex items-center gap-4">
           <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy-light ring-2 ring-blue/30">
             <span className="font-mono text-base font-bold tracking-tight text-blue select-none">JL</span>
-            <span className="absolute inset-0 rounded-full ring-1 ring-white/5" aria-hidden />
+            <span className="absolute inset-0 rounded-full ring-1 ring-slate/20" aria-hidden />
           </div>
           <div className="h-px flex-1 bg-gradient-to-r from-blue/20 to-transparent" aria-hidden />
         </div>
