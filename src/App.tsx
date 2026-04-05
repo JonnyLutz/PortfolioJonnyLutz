@@ -6,9 +6,7 @@ import { AboutSection } from './components/AboutSection'
 import { ExperienceSection } from './components/ExperienceSection'
 import { ProjectsSection } from './components/ProjectsSection'
 import { ContactSection } from './components/ContactSection'
-import { BgPicker } from './components/BgPicker'
-import { BadgeColorPicker } from './components/BadgeColorPicker'
-import { ThemeToggle } from './components/ThemeToggle'
+import { FloatingChrome } from './components/FloatingChrome'
 import { BadgeColorProvider } from './context/BadgeColorContext'
 import { ThemeProvider, useTheme } from './context/ThemeContext'
 
@@ -18,9 +16,7 @@ function AppContent() {
   return (
     <BadgeColorProvider>
       <div className="min-h-svh pb-20 sm:pb-16">
-        <ThemeToggle />
-        <BgPicker />
-        <BadgeColorPicker />
+        <FloatingChrome />
         <Toaster
           theme={theme === 'dark' ? 'dark' : 'light'}
           position="top-center"

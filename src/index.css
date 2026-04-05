@@ -23,7 +23,7 @@
   --color-violet-bright: #d4b8ff;
 }
 
-/* Light mode: flip semantic tokens when html.light is set (ThemeToggle) */
+/* Light mode: flip semantic tokens when html.light is set (FloatingChrome / theme) */
 html.light {
   --color-navy: #e2eaf5;
   --color-navy-light: #ffffff;

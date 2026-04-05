@@ -66,7 +66,7 @@ export function Sidebar() {
   }, [nav])
 
   return (
-    <header className="lg:sticky lg:top-0 lg:max-h-screen lg:py-24 lg:flex lg:flex-col lg:justify-between lg:gap-16">
+    <header className="max-lg:pt-6 lg:sticky lg:top-0 lg:max-h-screen lg:py-24 lg:flex lg:flex-col lg:justify-between lg:gap-16">
       <div>
         <div className="mb-6 flex items-center gap-4">
           <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy-light ring-2 ring-blue/30">
