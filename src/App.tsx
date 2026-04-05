@@ -6,10 +6,12 @@ import { AboutSection } from './components/AboutSection'
 import { ExperienceSection } from './components/ExperienceSection'
 import { ProjectsSection } from './components/ProjectsSection'
 import { ContactSection } from './components/ContactSection'
+import { BgPicker } from './components/BgPicker'
 
 function App() {
   return (
     <div className="min-h-svh">
+      <BgPicker />
       <Toaster theme="dark" position="top-center" richColors />
       <a
         href="#about"

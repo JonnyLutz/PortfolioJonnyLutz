@@ -27,6 +27,7 @@
 
   body {
     @apply m-0 min-h-svh text-slate antialiased;
+    position: relative;
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.65;
@@ -37,6 +38,11 @@
       #020810 100%
     );
     background-attachment: fixed;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
   }
 
   ::selection {
