@@ -57,9 +57,7 @@ export const site = {
       company: 'Huntington National Bank',
       summary:
         'Developed customer-facing web applications for account origination and related journeys. Collaborated with business and analytics partners on experiments and instrumentation so we could measure conversion and iterate with evidence.',
-      bullets: [
-        'Ran A/B tests and supported Adobe Analytics / Adobe Target workflows for stakeholder reporting.',
-      ],
+      bullets: [],
       stack: ['Angular', 'JavaScript', 'A/B testing', 'Adobe Analytics'],
     },
     {
@@ -78,7 +76,7 @@ export const site = {
       summary:
         'Designed, assembled and tested components for gas turbine research programs. Built and documented hardware setups; installed and calibrated a large set of precision sensors for experiments.  Performed high stakes experiments under tight deadlines.',
       bullets: [],
-      stack: ['Instrumentation', 'Technical documentation', 'Mechanical engineering'],
+      stack: ['Design & Manufacturing', 'Instrumentation', 'Technical documentation', 'Mechanical engineering'],
     },
     {
       period: '2009 — 2012',
@@ -87,7 +85,7 @@ export const site = {
       summary:
         'Precision tooling and continuous improvement projects in high-volume automotive manufacturing. Managed a substantial annual tooling budget, led cost initiatives with meaningful savings, and upheld strict quality standards through a major model change.',
       bullets: [],
-      stack: ['Manufacturing', 'Quality', 'Cost reduction', 'Lean manufacturing', 'Continuous improvement', 'kaizen'],
+      stack: ['Manufacturing', 'Quality', 'Cost reduction', 'Lean manufacturing', 'Continuous improvement', 'Kaizen'],
     },
     {
       period: '2007 — 2008',
