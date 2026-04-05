@@ -1,23 +1,23 @@
 @import 'tailwindcss';
 
-/* Palette: warm plum base, rose + terracotta accents (branch: theme/warm-plum) */
+/* Palette: cyberpunk — deep blue-black, neon cyan links, magenta accents */
 @theme {
   --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Menlo', monospace;
 
-  --color-navy: #140c12;
-  --color-navy-light: #241820;
-  --color-slate-light: #ebe3dc;
-  --color-slate: #948b92;
-  --color-green: #e9c46a;
-  --color-green-dim: #d4a84a;
-  --color-green-bright: #f4e4a6;
-  --color-blue: #d687ad;
-  --color-blue-dim: #c46b9a;
-  --color-blue-bright: #e8b4ce;
-  --color-orange: #e07a5f;
-  --color-orange-dim: #c96a52;
-  --color-orange-bright: #f4a090;
+  --color-navy: #05080f;
+  --color-navy-light: #0d1528;
+  --color-slate-light: #c8f1ff;
+  --color-slate: #5c7a99;
+  --color-green: #00ffb7;
+  --color-green-dim: #00c78f;
+  --color-green-bright: #66ffd9;
+  --color-blue: #00e5ff;
+  --color-blue-dim: #00b4cc;
+  --color-blue-bright: #7ff0ff;
+  --color-orange: #ff2a6d;
+  --color-orange-dim: #e01e5c;
+  --color-orange-bright: #ff6b9d;
 }
 
 @layer base {
@@ -32,15 +32,15 @@
     line-height: 1.65;
     background: linear-gradient(
       165deg,
-      #1a0e14 0%,
-      var(--color-navy) 45%,
-      #120a10 100%
+      #0a0218 0%,
+      var(--color-navy) 42%,
+      #020810 100%
     );
     background-attachment: fixed;
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-blue) 28%, transparent);
-    color: var(--color-slate-light);
+    background: color-mix(in srgb, var(--color-blue) 35%, transparent);
+    color: var(--color-navy);
   }
 }
