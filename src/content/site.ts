@@ -17,8 +17,7 @@ export const site = {
   },
 
   about: [
-    'I build front-end features for the AWS IoT Console, owning the development from design through deployment. I support production workloads that scale to billions of devices across the globe.',
-    "As an AI Champion, I am constantly evolving my development technique. I'm now using agentic automation with tools such as Kiro, Cursor, and Claude for extreme productivity and improved code quality.",
+    "I build front-end features for the AWS IoT Console, owning development from design through deployment—supporting production workloads that scale to billions of global devices. Currently, I'm reimagining the software development process for the agentic era.",
   ],
 
   experience: [
@@ -27,11 +26,11 @@ export const site = {
       title: 'Front-End Engineer II',
       company: 'Amazon Web Services',
       summary:
-        'Ship customer-facing UI for the AWS IoT Console across sub-consoles, owning features from discovery through launch—React/TypeScript, AWS APIs, observability, and automated coverage (integration tests, synthetics, canaries).',
+        'Ship customer-facing features for the AWS IoT Console across 10+ sub-consoles, owning features from discovery through launch.  Stack: React/TypeScript, AWS APIs, observability, CI/CD, and test automation.',
       bullets: [
-        'Partner with UX, PM, and peer engineering teams on accessibility, localization, and long-running deprecations with minimal customer impact.',
-        'Champion pragmatic AI-assisted workflows—templates, repo-level guidance, and knowledge sharing—that took team adoption from partial to consistent use.',
-        'Reduce operational noise by tightening tests and monitoring; dig into cross-region incidents when signals misfire.',
+        'Partnering with UX, PM, and peer engineering teams on feature development, testing, deployment and production support.',
+        'Championing AI-assisted workflows, development processes, and early adoption of state of the art productivity tools.',
+        'Investing in tools and processes to move towards agentic development and production support.',
       ],
       stack: [
         'React',
@@ -42,6 +41,14 @@ export const site = {
         'AWS SDK',
         'Cloudscape',
         'CI/CD',
+        'Cursor',
+        'Kiro',
+        'VS Code',
+        'Claude',
+        'OpenClaw',
+        'MCP',
+        'Agentic AI',
+        'AI-assisted workflows',
       ],
     },
     {
@@ -53,34 +60,34 @@ export const site = {
       bullets: [
         'Ran A/B tests and supported Adobe Analytics / Adobe Target workflows for stakeholder reporting.',
       ],
-      stack: ['React', 'JavaScript', 'A/B testing', 'Adobe Analytics'],
+      stack: ['Angular', 'JavaScript', 'A/B testing', 'Adobe Analytics'],
     },
     {
       period: '2015 — 2020',
       title: 'Science Educator',
       company: 'Southeast Asia',
       summary:
-        'Designed and delivered science instruction for diverse ESL learners—large groups, limited time, and the need for clarity under pressure. Strengthened skills in facilitation, written explanation, and adapting material to different audiences.',
+        'Designed and delivered science instruction for diverse ESL learners. Strengthened skills in facilitation, written explanation, and adapting material to different audiences.',
       bullets: [],
-      stack: ['Curriculum design', 'Communication'],
+      stack: ['Curriculum design', 'Communication', 'Teaching', 'Science education'],
     },
     {
       period: '2012 — 2015',
       title: 'Design Engineer',
       company: 'The Ohio State University — Aerospace Research Center',
       summary:
-        'Electro-mechanical assemblies and instrumentation for gas turbine research programs. Built and documented hardware setups; installed and calibrated a large set of precision sensors for experimental campaigns.',
+        'Designed, assembled and tested components for gas turbine research programs. Built and documented hardware setups; installed and calibrated a large set of precision sensors for experiments.  Performed high stakes experiments under tight deadlines.',
       bullets: [],
-      stack: ['Instrumentation', 'Technical documentation'],
+      stack: ['Instrumentation', 'Technical documentation', 'Mechanical engineering'],
     },
     {
       period: '2009 — 2012',
       title: 'Manufacturing Engineer',
       company: 'Honda of America',
       summary:
-        'Precision tooling and continuous improvement in high-volume automotive manufacturing. Managed a substantial annual tooling budget, led cost initiatives with meaningful savings, and upheld strict quality standards through a major model change.',
+        'Precision tooling and continuous improvement projects in high-volume automotive manufacturing. Managed a substantial annual tooling budget, led cost initiatives with meaningful savings, and upheld strict quality standards through a major model change.',
       bullets: [],
-      stack: ['Manufacturing', 'Quality', 'Cost improvement'],
+      stack: ['Manufacturing', 'Quality', 'Cost reduction', 'Lean manufacturing', 'Continuous improvement', 'kaizen'],
     },
     {
       period: '2007 — 2008',
