@@ -13,7 +13,7 @@ function App() {
       <Toaster theme="dark" position="top-center" richColors />
       <a
         href="#about"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-navy-light focus:px-3 focus:py-2 focus:text-sm focus:font-medium focus:text-green focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-green"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-navy-light focus:px-3 focus:py-2 focus:text-sm focus:font-medium focus:text-blue focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue"
       >
         Skip to content
       </a>

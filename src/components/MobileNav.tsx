@@ -21,7 +21,7 @@ export function MobileNav() {
           <li key={href}>
             <a
               href={href}
-              className="transition hover:text-green focus-visible:text-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+              className="transition hover:text-blue focus-visible:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
             >
               {label}
             </a>
@@ -32,7 +32,7 @@ export function MobileNav() {
             href={site.links.github}
             target="_blank"
             rel="noreferrer"
-            className="transition hover:text-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+            className="transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
           >
             GitHub
           </a>

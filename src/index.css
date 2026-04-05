@@ -12,6 +12,12 @@
   --color-green: #5ee1c8;
   --color-green-dim: #4abfb0;
   --color-green-bright: #8af5e0;
+  --color-blue: #60a5fa;
+  --color-blue-dim: #3b82f6;
+  --color-blue-bright: #93c5fd;
+  --color-orange: #f97316;
+  --color-orange-dim: #ea6c0a;
+  --color-orange-bright: #fb923c;
 }
 
 @layer base {
@@ -29,7 +35,7 @@
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-green) 22%, transparent);
-    color: var(--color-navy);
+    background: color-mix(in srgb, var(--color-blue) 22%, transparent);
+    color: var(--color-slate-light);
   }
 }

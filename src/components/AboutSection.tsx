@@ -14,6 +14,16 @@ export function AboutSection() {
           </p>
         ))}
       </div>
+
+      <div className="mt-16 flex items-center gap-4" aria-hidden>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-white/10" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="h-4 w-4 shrink-0 text-orange/50">
+          <circle cx="12" cy="12" r="2" />
+          <circle cx="5" cy="12" r="1" />
+          <circle cx="19" cy="12" r="1" />
+        </svg>
+        <div className="h-px flex-1 bg-gradient-to-l from-transparent via-white/10 to-white/10" />
+      </div>
     </section>
   )
 }

@@ -58,7 +58,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
             href={project.href}
             target="_blank"
             rel="noreferrer"
-            className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-green transition hover:text-green-dim focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+            className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue transition hover:text-blue-dim focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
           >
             {project.hrefLabel ?? 'View project'}
             <span aria-hidden>↗</span>
@@ -74,7 +74,7 @@ export function ProjectsSection() {
     <section id="projects" className="mb-16 scroll-mt-24 lg:mb-24" aria-labelledby="projects-heading">
       <h2
         id="projects-heading"
-        className="border-l-2 border-green/50 pl-4 text-sm font-bold uppercase tracking-[0.14em] text-slate-light"
+        className="border-l-2 border-orange/60 pl-4 text-sm font-bold uppercase tracking-[0.14em] text-slate-light"
       >
         Projects
       </h2>

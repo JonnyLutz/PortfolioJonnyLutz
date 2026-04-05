@@ -68,10 +68,17 @@ export function Sidebar() {
   return (
     <header className="lg:sticky lg:top-0 lg:max-h-screen lg:py-24 lg:flex lg:flex-col lg:justify-between lg:gap-16">
       <div>
+        <div className="mb-6 flex items-center gap-4">
+          <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy-light ring-2 ring-blue/30">
+            <span className="font-mono text-base font-bold tracking-tight text-blue select-none">JL</span>
+            <span className="absolute inset-0 rounded-full ring-1 ring-white/5" aria-hidden />
+          </div>
+          <div className="h-px flex-1 bg-gradient-to-r from-blue/20 to-transparent" aria-hidden />
+        </div>
         <h1 className="text-4xl font-bold tracking-tight text-slate-light sm:text-5xl">
           <a
             href="#about"
-            className="rounded-sm transition hover:text-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green focus-visible:text-green"
+            className="rounded-sm transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue focus-visible:text-blue"
           >
             {site.name}
           </a>
@@ -87,19 +94,20 @@ export function Sidebar() {
                 <li key={id}>
                   <a
                     href={`#${id}`}
-                    className={`group inline-flex items-center gap-3 py-1 text-xs font-bold uppercase tracking-widest transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green focus-visible:text-green ${
-                      isActive ? 'text-slate-light hover:text-green' : 'text-slate hover:text-green'
+                    className={`group inline-flex items-center gap-3 py-1 text-xs font-bold uppercase tracking-widest transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue focus-visible:text-blue ${
+                      isActive ? 'text-slate-light hover:text-blue' : 'text-slate hover:text-blue'
                     }`}
                   >
                     <span
                       className={`h-px w-8 transition-all ${
                         isActive
-                          ? 'bg-slate-light group-hover:bg-green'
-                          : 'bg-slate group-hover:w-12 group-hover:bg-green'
+                          ? 'bg-slate-light group-hover:bg-blue'
+                          : 'bg-slate group-hover:w-12 group-hover:bg-blue'
                       }`}
                       aria-hidden
                     />
                     {label}
+                    <span className="ml-auto translate-x-0 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100 text-blue text-xs" aria-hidden>↗</span>
                   </a>
                 </li>
               )
@@ -115,7 +123,7 @@ export function Sidebar() {
               href={site.links.github}
               target="_blank"
               rel="noreferrer"
-              className="text-slate transition hover:text-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+              className="text-slate transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
               aria-label="GitHub"
             >
               <IconGithub className="h-5 w-5" />
@@ -126,7 +134,7 @@ export function Sidebar() {
               href={site.links.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="text-slate transition hover:text-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+              className="text-slate transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
               aria-label="LinkedIn"
             >
               <IconLinkedIn className="h-5 w-5" />
@@ -135,7 +143,7 @@ export function Sidebar() {
           <li>
             <a
               href="#contact-form"
-              className="text-slate transition hover:text-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+              className="text-slate transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
               aria-label="Contact form"
             >
               <IconMail className="h-5 w-5" />

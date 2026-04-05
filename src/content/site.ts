@@ -17,7 +17,7 @@ export const site = {
   },
 
   about: [
-    "I build front-end features for the AWS IoT Console, owning development from design through deployment—supporting production workloads that scale to billions of global devices. Currently, I'm reimagining the software development process for the agentic era.",
+    "I build front-end features for the AWS IoT Console, supporting production workloads that scale to billions of global devices. Currently, I'm reimagining the software development process for the agentic era.",
   ],
 
   experience: [
@@ -26,7 +26,7 @@ export const site = {
       title: 'Front-End Engineer II',
       company: 'Amazon Web Services',
       summary:
-        'Ship customer-facing features for the AWS IoT Console across 10+ sub-consoles, owning features from discovery through launch.  Stack: React/TypeScript, AWS APIs, observability, CI/CD, and test automation.',
+        'Ship customer-facing features for the AWS IoT Console across 10+ sub-consoles. Stack: React/TypeScript, AWS APIs, observability, CI/CD, and test automation.',
       bullets: [
         'Partnering with UX, PM, and peer engineering teams on feature development, testing, deployment and production support.',
         'Championing AI-assisted workflows, development processes, and early adoption of state of the art productivity tools.',
