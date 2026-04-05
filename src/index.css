@@ -1,23 +1,23 @@
 @import 'tailwindcss';
 
-/* Palette: cool navy base, mint accent */
+/* Palette: warm plum base, rose + terracotta accents (branch: theme/warm-plum) */
 @theme {
   --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Menlo', monospace;
 
-  --color-navy: #0b1229;
-  --color-navy-light: #152238;
-  --color-slate-light: #d4dcf0;
-  --color-slate: #8b95b0;
-  --color-green: #5ee1c8;
-  --color-green-dim: #4abfb0;
-  --color-green-bright: #8af5e0;
-  --color-blue: #60a5fa;
-  --color-blue-dim: #3b82f6;
-  --color-blue-bright: #93c5fd;
-  --color-orange: #f97316;
-  --color-orange-dim: #ea6c0a;
-  --color-orange-bright: #fb923c;
+  --color-navy: #140c12;
+  --color-navy-light: #241820;
+  --color-slate-light: #ebe3dc;
+  --color-slate: #948b92;
+  --color-green: #e9c46a;
+  --color-green-dim: #d4a84a;
+  --color-green-bright: #f4e4a6;
+  --color-blue: #d687ad;
+  --color-blue-dim: #c46b9a;
+  --color-blue-bright: #e8b4ce;
+  --color-orange: #e07a5f;
+  --color-orange-dim: #c96a52;
+  --color-orange-bright: #f4a090;
 }
 
 @layer base {
@@ -30,12 +30,17 @@
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.65;
-    background: linear-gradient(165deg, #0a1628 0%, var(--color-navy) 42%, #0c182e 100%);
+    background: linear-gradient(
+      165deg,
+      #1a0e14 0%,
+      var(--color-navy) 45%,
+      #120a10 100%
+    );
     background-attachment: fixed;
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-blue) 22%, transparent);
+    background: color-mix(in srgb, var(--color-blue) 28%, transparent);
     color: var(--color-slate-light);
   }
 }
