@@ -8,7 +8,7 @@ export const site = {
   tagline: 'Agentic development and production support for the AWS IoT Console.',
 
   /** Set `true` to show [ProjectsSection](src/components/ProjectsSection.tsx) and nav link. */
-  showProjectsSection: false,
+  showProjectsSection: true,
 
   links: {
     github: 'https://github.com/JonnyLutz',
@@ -98,29 +98,31 @@ export const site = {
     },
   ],
 
-  /** Placeholder slots — add href + hrefLabel when a project is ready to link. */
+  /** Add `href` + `hrefLabel` for live demos; optional `image` + `imageAlt` (file in /public). */
   projects: [
     {
-      title: 'Project one',
+      title: 'Data4Life',
       description:
-        'Placeholder for an upcoming case study: problem statement, your role, stack, and a link to a demo or repo will go here.',
-      stack: ['React', 'TypeScript', 'TBD'],
-      image: '/project-agent-1.png',
-      imageAlt: 'Robot on a marble desk at sunset with a city skyline—workshop vibe.',
-    },
-    {
-      title: 'Project two',
-      description:
-        'Second showcase slot—e.g. an open-source tool, a product experiment, or a write-up on AI-assisted UI delivery.',
-      stack: ['TBD'],
-      image: '/project-agent-2.png',
-      imageAlt: 'Robot standing in a bright field of wildflowers.',
-    },
-    {
-      title: 'Project three',
-      description:
-        'Third slot reserved for something visual—a dashboard, design-system contribution, or interactive demo worth a screenshot.',
-      stack: ['TBD'],
+        'A personal health dashboard backed by live WHOOP data: recovery, strain, sleep, body metrics, workouts, and sleep history — dark UI, card layout, deployed to Amplify.',
+      highlights: [
+        'Real wearable integration: users connect WHOOP, trigger sync, and see timestamped updates instead of static mock data.',
+        'Product-shaped scope — Dashboard, Sleep calendar, and Insights — so the same account spans daily metrics, history, and deeper views.',
+        'Honest production story: one codebase ships to a public Amplify URL with auth, logout, and dev-oriented controls where they help debugging.',
+      ],
+      stackBullets: [
+        'React 18 + TypeScript — typed UI and domain shapes for recovery, strain, sleep, workouts, and body readings.',
+        'Vite — fast local dev, optimized client bundles for the hosted SPA.',
+        'WHOOP Cloud API — OAuth-style connect flow, token handling, and REST pulls for cycles, sleep, activities, and profile/body metrics.',
+        'Client data layer — async fetch, loading/error UX, and “last updated” surfacing in the shell.',
+        'AWS Amplify Hosting — HTTPS SPA hosting and continuous deploys from the connected Git branch.',
+        'Session + auth UX — sign-in/sign-out and environment-aware helpers (e.g. dev auth visibility) aligned with how the app is tested and shipped.',
+        'Layout & visualization — responsive card grid, metric tiles, strain bars, and tab navigation for multiple surfaces.',
+      ],
+      image: '/project-data4life.png',
+      imageAlt:
+        'Data4Life health dashboard: WHOOP sync, recovery and strain cards, body metrics, workouts, and recent sleep.',
+      href: 'https://main.d124ldfr70a9je.amplifyapp.com',
+      hrefLabel: 'Visit live site',
     },
   ],
 
