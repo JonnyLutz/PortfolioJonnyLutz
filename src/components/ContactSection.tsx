@@ -44,7 +44,10 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="scroll-mt-24 pb-24" aria-labelledby="contact-heading">
-      <h2 id="contact-heading" className="text-sm font-bold uppercase tracking-widest text-slate-light">
+      <h2
+        id="contact-heading"
+        className="border-l-2 border-green/50 pl-4 text-sm font-bold uppercase tracking-[0.14em] text-slate-light"
+      >
         {site.contact.headline}
       </h2>
       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate">{site.contact.body}</p>

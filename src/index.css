@@ -1,18 +1,17 @@
 @import 'tailwindcss';
 
-/* Brittany Chiang–inspired palette: deep navy, slate text, teal accents */
+/* Palette: cool navy base, mint accent */
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Menlo', monospace;
 
-  --color-navy: #0a192f;
-  --color-navy-light: #112240;
-  --color-slate-light: #ccd6f6;
-  --color-slate: #8892b0;
-  --color-green: #64ffda;
-  --color-green-dim: #57cbb7;
-  /* Pop slightly above base green for hovers / emphasis */
-  --color-green-bright: #8dfff0;
+  --color-navy: #0b1229;
+  --color-navy-light: #152238;
+  --color-slate-light: #d4dcf0;
+  --color-slate: #8b95b0;
+  --color-green: #5ee1c8;
+  --color-green-dim: #4abfb0;
+  --color-green-bright: #8af5e0;
 }
 
 @layer base {
@@ -21,10 +20,12 @@
   }
 
   body {
-    @apply m-0 min-h-svh bg-navy text-slate antialiased;
+    @apply m-0 min-h-svh text-slate antialiased;
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.65;
+    background: linear-gradient(165deg, #0a1628 0%, var(--color-navy) 42%, #0c182e 100%);
+    background-attachment: fixed;
   }
 
   ::selection {

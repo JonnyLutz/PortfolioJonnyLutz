@@ -11,7 +11,10 @@ function TechTag({ label }: { label: string }) {
 export function ExperienceSection() {
   return (
     <section id="experience" className="mb-16 scroll-mt-24 lg:mb-24" aria-labelledby="experience-heading">
-      <h2 id="experience-heading" className="text-sm font-bold uppercase tracking-widest text-slate-light">
+      <h2
+        id="experience-heading"
+        className="border-l-2 border-green/50 pl-4 text-sm font-bold uppercase tracking-[0.14em] text-slate-light"
+      >
         Experience
       </h2>
 

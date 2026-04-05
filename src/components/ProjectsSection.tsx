@@ -72,7 +72,10 @@ function ProjectCard({ project }: { project: ProjectItem }) {
 export function ProjectsSection() {
   return (
     <section id="projects" className="mb-16 scroll-mt-24 lg:mb-24" aria-labelledby="projects-heading">
-      <h2 id="projects-heading" className="text-sm font-bold uppercase tracking-widest text-slate-light">
+      <h2
+        id="projects-heading"
+        className="border-l-2 border-green/50 pl-4 text-sm font-bold uppercase tracking-[0.14em] text-slate-light"
+      >
         Projects
       </h2>
       <p className="mt-3 max-w-xl text-sm text-slate">

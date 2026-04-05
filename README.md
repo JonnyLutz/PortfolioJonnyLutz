@@ -1,6 +1,6 @@
 # jonny-dev
 
-**This repo is the new portfolio** (dark navy, left sidebar, Brittany Chiang–style layout).  
+**This repo is the new portfolio** (dark navy, sticky sidebar + main column).  
 If you see the **old** purple/light or Semantic UI site, you’re in **`Semantic-Portfolio`** / **`jonnylutz-portfolio`** or a **live deploy** that still builds from that folder.
 
 ```bash

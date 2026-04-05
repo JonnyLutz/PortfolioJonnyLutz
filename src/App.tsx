@@ -22,7 +22,7 @@ function App() {
         <div className="lg:w-[38%] lg:max-w-[320px] lg:shrink-0">
           <Sidebar />
         </div>
-        <main className="min-w-0 flex-1 pb-16 pt-8 lg:max-w-3xl lg:py-24 xl:max-w-4xl">
+        <main className="min-w-0 flex-1 border-white/[0.06] pb-16 pt-8 lg:max-w-3xl lg:border-l lg:py-24 lg:pl-12 xl:max-w-4xl xl:pl-14">
           <AboutSection />
           <ExperienceSection />
           {site.showProjectsSection ? <ProjectsSection /> : null}
