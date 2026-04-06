@@ -2,8 +2,8 @@ import { site } from '../content/site'
 
 const LINKS_ALL = [
   { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ] as const
 

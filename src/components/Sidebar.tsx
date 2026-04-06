@@ -30,8 +30,8 @@ function IconMail({ className }: { className?: string }) {
 
 const NAV = [
   { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
   { id: 'contact', label: 'Contact' },
 ] as const
 
@@ -75,16 +75,18 @@ export function Sidebar() {
           </div>
           <div className="h-px flex-1 bg-gradient-to-r from-blue/20 to-transparent" aria-hidden />
         </div>
-        <h1 className="text-4xl font-bold tracking-tight text-slate-light sm:text-5xl">
-          <a
-            href="#about"
-            className="rounded-sm transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue focus-visible:text-blue"
-          >
-            {site.name}
-          </a>
-        </h1>
-        <h2 className="mt-4 text-lg font-medium tracking-tight text-slate-light sm:text-xl">{site.title}</h2>
-        <p className="mt-4 max-w-xs leading-normal text-slate">{site.tagline}</p>
+        <div className="max-w-xs space-y-4">
+          <h1 className="text-4xl font-bold tracking-tight text-slate-light sm:text-5xl">
+            <a
+              href="#about"
+              className="rounded-sm transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue focus-visible:text-blue"
+            >
+              {site.name}
+            </a>
+          </h1>
+          <h2 className="text-lg font-medium tracking-tight text-slate-light sm:text-xl">{site.title}</h2>
+          <p className="leading-normal text-slate">{site.tagline}</p>
+        </div>
 
         <nav className="mt-16 hidden lg:block" aria-label="In-page">
           <ul className="flex flex-col gap-3">

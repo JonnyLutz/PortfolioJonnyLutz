@@ -16,7 +16,7 @@ export const BADGE_SCHEMES: readonly BadgeScheme[] = [
     tagPill: 'bg-orange/10 text-orange',
     headingBorder: 'border-orange/60',
     headingIcon: 'text-orange',
-    subtleIcon: 'text-orange/50',
+    subtleIcon: 'text-orange/70',
     sectionLabel: 'text-orange',
     submitButton:
       'bg-orange text-navy hover:bg-orange-dim focus-visible:outline-orange',
@@ -29,7 +29,7 @@ export const BADGE_SCHEMES: readonly BadgeScheme[] = [
     tagPill: 'bg-blue/10 text-blue',
     headingBorder: 'border-blue/60',
     headingIcon: 'text-blue',
-    subtleIcon: 'text-blue/50',
+    subtleIcon: 'text-blue/70',
     sectionLabel: 'text-blue',
     submitButton:
       'bg-blue text-navy hover:bg-blue-dim focus-visible:outline-blue',
@@ -41,7 +41,7 @@ export const BADGE_SCHEMES: readonly BadgeScheme[] = [
     tagPill: 'bg-green/10 text-green',
     headingBorder: 'border-green/60',
     headingIcon: 'text-green',
-    subtleIcon: 'text-green/50',
+    subtleIcon: 'text-green/70',
     sectionLabel: 'text-green',
     submitButton:
       'bg-green text-navy hover:bg-green-dim focus-visible:outline-green',
@@ -54,7 +54,7 @@ export const BADGE_SCHEMES: readonly BadgeScheme[] = [
     tagPill: 'bg-violet/10 text-violet',
     headingBorder: 'border-violet/60',
     headingIcon: 'text-violet',
-    subtleIcon: 'text-violet/50',
+    subtleIcon: 'text-violet/70',
     sectionLabel: 'text-violet',
     submitButton:
       'bg-violet text-navy hover:bg-violet-dim focus-visible:outline-violet',

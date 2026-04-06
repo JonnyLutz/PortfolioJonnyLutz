@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BADGE_SCHEMES, type BadgeSchemeIndex } from '../context/badgeSchemes'
+import type { BadgeSchemeIndex } from '../context/badgeSchemes'
 import { useBadgeColor } from '../context/BadgeColorContext'
 import { useTheme } from '../context/ThemeContext'
 
@@ -80,7 +80,7 @@ function RobotGlyph({ className }: { className?: string }) {
 
 export function FloatingChrome() {
   const { theme, setTheme } = useTheme()
-  const { schemeIndex, setSchemeIndex } = useBadgeColor()
+  const { setSchemeIndex } = useBadgeColor()
   const [bgActive, setBgActive] = useState(0)
   const isLight = theme === 'light'
 
@@ -129,48 +129,6 @@ export function FloatingChrome() {
       </div>
 
       <div
-        className="fixed left-6 z-50 hidden flex-row items-center gap-2.5 lg:flex"
-        style={{
-          bottom: 'max(1.5rem, env(safe-area-inset-bottom, 0px))',
-        }}
-        role="group"
-        aria-label="Badge and accent color"
-      >
-        <span
-          className="text-slate-light drop-shadow-[0_0_8px_rgba(200,241,255,0.15)]"
-          aria-hidden
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.75"
-            className="h-3 w-3"
-          >
-            <circle cx="12" cy="12" r="5.5" />
-          </svg>
-        </span>
-        <div className="flex flex-row items-center gap-2">
-          {([0, 1, 2, 3] as const).map((i) => {
-            const isSelected = schemeIndex === i
-            return (
-              <button
-                key={i}
-                type="button"
-                aria-label={`Accent color ${i + 1}`}
-                aria-pressed={isSelected}
-                onClick={() => setSchemeIndex(i as BadgeSchemeIndex)}
-                className={`h-2.5 w-2.5 shrink-0 rounded-full border transition-all duration-200 ${
-                  isSelected ? BADGE_SCHEMES[i].dotActive : BADGE_SCHEMES[i].dotIdle
-                }`}
-              />
-            )
-          })}
-        </div>
-      </div>
-
-      <div
         className="fixed right-6 z-50 hidden flex-col items-center gap-1.5 lg:flex"
         style={{
           bottom: 'max(1.5rem, env(safe-area-inset-bottom, 0px))',
@@ -197,7 +155,10 @@ export function FloatingChrome() {
             <button
               key={src}
               type="button"
-              onClick={() => setBgActive(i)}
+              onClick={() => {
+                setBgActive(i)
+                setSchemeIndex(i as BadgeSchemeIndex)
+              }}
               aria-label={`Background ${i + 1}`}
               aria-pressed={selected}
               className={`h-2.5 w-2.5 rounded-full border transition-all duration-200 ${

@@ -7,8 +7,8 @@
 
   --color-navy: #05080f;
   --color-navy-light: #0d1528;
-  --color-slate-light: #c8f1ff;
-  --color-slate: #5c7a99;
+  --color-slate-light: #d8f2ff;
+  --color-slate: #9eb4cc;
   --color-green: #00ffb7;
   --color-green-dim: #00c78f;
   --color-green-bright: #66ffd9;
@@ -27,8 +27,8 @@
 html.light {
   --color-navy: #e2eaf5;
   --color-navy-light: #ffffff;
-  --color-slate-light: #0c1220;
-  --color-slate: #4a6278;
+  --color-slate-light: #0a101c;
+  --color-slate: #2a3a4a;
   --color-green: #009f78;
   --color-green-dim: #008a68;
   --color-green-bright: #00c090;

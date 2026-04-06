@@ -35,8 +35,8 @@ function AppContent() {
           </div>
           <main className="min-w-0 flex-1 border-slate/20 pb-16 pt-8 lg:max-w-3xl lg:border-l lg:py-24 lg:pl-12 xl:max-w-4xl xl:pl-14">
             <AboutSection />
-            <ExperienceSection />
             {site.showProjectsSection ? <ProjectsSection /> : null}
+            <ExperienceSection />
             <ContactSection />
           </main>
         </div>
