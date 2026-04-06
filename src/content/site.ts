@@ -3,9 +3,9 @@
 export const site = {
   name: 'Jonathan Lutz',
   handle: 'JonnyLutz',
-  title: 'Front-End Engineer II',
+  title: 'Front-End Engineer',
   company: 'Amazon Web Services',
-  tagline: 'Agentic development and production support for the AWS IoT Console.',
+  tagline: 'Agentic software development and production support for the AWS IoT Console.',
 
   /** Set `true` to show [ProjectsSection](src/components/ProjectsSection.tsx) and nav link. */
   showProjectsSection: true,
@@ -17,7 +17,7 @@ export const site = {
   },
 
   about: [
-    "I build front-end features for the AWS IoT Console, supporting production workloads that scale to billions of global devices. Currently, I'm reimagining the software development process for the agentic era.",
+    "I build front-end features for the AWS IoT Console, supporting production workloads that scale to billions of global devices. Currently, I'm reimagining how software is built in the era of agentic AI.",
   ],
 
   experience: [
@@ -26,7 +26,7 @@ export const site = {
       title: 'Front-End Engineer II',
       company: 'Amazon Web Services',
       summary:
-        'Ship customer-facing features for the AWS IoT Console across 10+ sub-consoles. Stack: React/TypeScript, AWS APIs, observability, CI/CD, and test automation.',
+        'Ship customer-facing features for the AWS IoT Console across 10+ sub-consoles. Stack: React/TypeScript, AWS APIs, CI/CD, and test automation.',
       bullets: [
         'Partnering with UX, PM, and peer engineering teams on feature development, testing, deployment and production support.',
         'Championing AI-assisted workflows, development processes, and early adoption of state of the art productivity tools.',
@@ -103,26 +103,19 @@ export const site = {
     {
       title: 'Data4Life',
       description:
-        'A personal health dashboard backed by live WHOOP data: recovery, strain, sleep, body metrics, workouts, and sleep history — dark UI, card layout, deployed to Amplify.',
-      highlights: [
-        'Real wearable integration: users connect WHOOP, trigger sync, and see timestamped updates instead of static mock data.',
-        'Product-shaped scope — Dashboard, Sleep calendar, and Insights — so the same account spans daily metrics, history, and deeper views.',
-        'Honest production story: one codebase ships to a public Amplify URL with auth, logout, and dev-oriented controls where they help debugging.',
-      ],
+        'Personal dashboard that syncs WHOOP data on demand: recovery, strain, sleep, workouts, and body metrics across dashboard, sleep calendar, and AI insights. Dark UI; hosted on Amplify with AWS Cognito.',
       stackBullets: [
-        'React 18 + TypeScript — typed UI and domain shapes for recovery, strain, sleep, workouts, and body readings.',
-        'Vite — fast local dev, optimized client bundles for the hosted SPA.',
-        'WHOOP Cloud API — OAuth-style connect flow, token handling, and REST pulls for cycles, sleep, activities, and profile/body metrics.',
-        'Client data layer — async fetch, loading/error UX, and “last updated” surfacing in the shell.',
-        'AWS Amplify Hosting — HTTPS SPA hosting and continuous deploys from the connected Git branch.',
-        'Session + auth UX — sign-in/sign-out and environment-aware helpers (e.g. dev auth visibility) aligned with how the app is tested and shipped.',
-        'Layout & visualization — responsive card grid, metric tiles, strain bars, and tab navigation for multiple surfaces.',
+        'React 18, TypeScript, Vite.',
+        'WHOOP Cloud API — OAuth, tokens, REST for cycles, sleep, activities, body/profile.',
+        'Data layer: loads client data asynchronously with clear loading and error states, and shows when the dataset was last refreshed.',
+        'Platform: hosted on AWS Amplify with branch-based deploys; authentication with AWS Cognito.',
+        'Features: dashboard, sleep calendar, and AI insights.',
       ],
       image: '/project-data4life.png',
-      imageAlt:
-        'Data4Life health dashboard: WHOOP sync, recovery and strain cards, body metrics, workouts, and recent sleep.',
+      imageAlt: 'Screenshot of the Data4Life dashboard.',
       href: 'https://main.d124ldfr70a9je.amplifyapp.com',
       hrefLabel: 'Visit live site',
+      repoHref: 'https://github.com/JonnyLutz/Data4Life',
     },
   ],
 
