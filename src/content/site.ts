@@ -7,6 +7,9 @@ export const site = {
   company: 'Amazon Web Services',
   tagline: 'Agentic software development and production support for the AWS IoT Console.',
 
+  /** Footer line (city / region). */
+  location: 'Seattle, WA',
+
   /** Set `true` to show [ProjectsSection](src/components/ProjectsSection.tsx) and nav link. */
   showProjectsSection: true,
 
@@ -100,6 +103,20 @@ export const site = {
 
   /** Add `href` + `hrefLabel` for live demos; optional `image` + `imageAlt` (file in /public). */
   projects: [
+    {
+      title: 'CyberPugs',
+      description:
+        'Interactive AI chatbot experience with a cyberpunk twist: browse an active roster of augmented companions, run a neural-link handshake, then open a live comms session with terminal-style UI, persona copy, and neon glass panels.',
+      stackBullets: [
+        'React 18, TypeScript, Vite, and React Router — separate routes for catalog browsing, device linking, and per-agent chat.',
+        'Hosted on AWS Amplify; model access via AWS Bedrock, OpenRouter, and GrokAI.',
+      ],
+      image: '/project-cyberpugs.png',
+      imageAlt: 'CyberPugs chat session with Turbo Snort: cockpit backdrop, pug avatar, and terminal-style message panel.',
+      href: 'https://main.d3nroar5u5ajhq.amplifyapp.com/',
+      hrefLabel: 'Visit live site',
+      repoHref: 'https://github.com/JonnyLutz/CyberPugs',
+    },
     {
       title: 'Data4Life',
       description:

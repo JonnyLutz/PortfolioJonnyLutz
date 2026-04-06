@@ -12,7 +12,7 @@ export type ProjectItem = {
   highlights?: readonly string[]
   href?: string
   hrefLabel?: string
-  /** GitHub repository (icon next to project title). */
+  /** GitHub repository — shown inline next to the live demo link. */
   repoHref?: string
   image?: string
   imageAlt?: string
@@ -38,87 +38,87 @@ function TechPill({ label }: { label: string }) {
 }
 
 function ProjectCard({ project }: { project: ProjectItem }) {
+  const { scheme } = useBadgeColor()
   const hasImage = Boolean(project.image && project.imageAlt)
 
   return (
     <article className="group flex flex-col gap-6">
-      {hasImage ? (
-        project.href ? (
-          <a
-            href={project.href}
-            target="_blank"
-            rel="noreferrer"
-            className="block h-44 w-full overflow-hidden rounded-lg border border-slate/25 bg-navy-light/40 transition hover:border-blue/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue sm:h-52 md:h-56 lg:h-60"
-            aria-label={`${project.hrefLabel ?? 'Open live demo'} — ${project.title}`}
-          >
-            <img
-              src={project.image}
-              alt={project.imageAlt!}
-              width={1200}
-              height={675}
-              decoding="async"
-              className="h-full w-full object-cover object-top"
-            />
-          </a>
-        ) : (
-          <div className="h-44 w-full overflow-hidden rounded-lg border border-slate/25 bg-navy-light/40 sm:h-52 md:h-56 lg:h-60">
-            <img
-              src={project.image}
-              alt={project.imageAlt!}
-              width={1200}
-              height={675}
-              decoding="async"
-              className="h-full w-full object-cover object-top"
-            />
-          </div>
-        )
-      ) : (
-        <div
-          className="flex h-44 w-full items-center justify-center overflow-hidden rounded-lg border border-slate/20 bg-navy-light px-3 text-center sm:h-52 md:h-56 lg:h-60"
-          aria-hidden
-        >
-          <span className="font-mono text-[10px] leading-snug text-slate/85">Image · soon</span>
-        </div>
-      )}
-      <div className="min-w-0 flex-1">
-        <h3 className="flex flex-wrap items-center gap-2 text-base font-medium">
+      <div className="flex flex-col gap-3">
+        <h3 className="text-base font-medium text-slate-light">
           {project.href ? (
             <a
               href={project.href}
               target="_blank"
               rel="noreferrer"
-              className="text-slate-light transition-colors hover:text-blue focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
+              className="transition-colors hover:text-blue focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
             >
               {project.title}
             </a>
           ) : (
-            <span className="text-slate-light">{project.title}</span>
+            <span>{project.title}</span>
           )}
-          {project.repoHref ? (
-            <a
-              href={project.repoHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex shrink-0 rounded-sm text-slate transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
-              aria-label={`${project.title} on GitHub`}
-            >
-              <IconGithub className="h-5 w-5" />
-            </a>
-          ) : null}
-          {!project.href ? (
-            <span className="font-mono text-[10px] font-normal uppercase tracking-wider text-slate/90">
+          {!project.href && !project.repoHref ? (
+            <span className="ml-2 font-mono text-[10px] font-normal uppercase tracking-wider text-slate/90">
               placeholder
             </span>
           ) : null}
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-slate">{project.description}</p>
+
+        {hasImage ? (
+          project.href ? (
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+              className="block h-44 w-full overflow-hidden rounded-lg border border-slate/25 bg-navy-light/40 transition hover:border-blue/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue sm:h-52 md:h-56 lg:h-60"
+              aria-label={`${project.hrefLabel ?? 'Open live demo'} — ${project.title}`}
+            >
+              <img
+                src={project.image}
+                alt={project.imageAlt!}
+                width={1200}
+                height={675}
+                decoding="async"
+                className="h-full w-full object-cover object-top"
+              />
+            </a>
+          ) : (
+            <div className="h-44 w-full overflow-hidden rounded-lg border border-slate/25 bg-navy-light/40 sm:h-52 md:h-56 lg:h-60">
+              <img
+                src={project.image}
+                alt={project.imageAlt!}
+                width={1200}
+                height={675}
+                decoding="async"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+          )
+        ) : (
+          <div
+            className="flex h-44 w-full items-center justify-center overflow-hidden rounded-lg border border-slate/20 bg-navy-light px-3 text-center sm:h-52 md:h-56 lg:h-60"
+            aria-hidden
+          >
+            <span className="font-mono text-[10px] leading-snug text-slate/85">Image · soon</span>
+          </div>
+        )}
+      </div>
+
+      <div className="min-w-0 flex-1">
+        <p
+          className={`border-l-2 pl-3 text-sm leading-relaxed text-slate sm:pl-4 ${scheme.headingBorder}`}
+        >
+          {project.description}
+        </p>
 
         {project.highlights?.length ? (
           <div className="mt-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-light">
+            <p className={`text-xs font-semibold uppercase tracking-[0.12em] ${scheme.sectionLabel}`}>
               What stands out
             </p>
-            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate marker:text-slate/75">
+            <ul
+              className={`mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate ${scheme.listMarker}`}
+            >
               {project.highlights.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -128,10 +128,12 @@ function ProjectCard({ project }: { project: ProjectItem }) {
 
         {project.stackBullets?.length ? (
           <div className="mt-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-light">
+            <p className={`text-xs font-semibold uppercase tracking-[0.12em] ${scheme.sectionLabel}`}>
               Tech stack
             </p>
-            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate marker:text-slate/75">
+            <ul
+              className={`mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate ${scheme.listMarker}`}
+            >
               {project.stackBullets.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -146,16 +148,32 @@ function ProjectCard({ project }: { project: ProjectItem }) {
             ))}
           </div>
         ) : null}
-        {project.href ? (
-          <a
-            href={project.href}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue transition hover:text-blue-dim focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
-          >
-            {project.hrefLabel ?? 'View project'}
-            <span aria-hidden>↗</span>
-          </a>
+        {project.href || project.repoHref ? (
+          <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+            {project.href ? (
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-medium text-blue transition hover:text-blue-dim focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
+              >
+                {project.hrefLabel ?? 'View project'}
+                <span aria-hidden>↗</span>
+              </a>
+            ) : null}
+            {project.repoHref ? (
+              <a
+                href={project.repoHref}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-slate transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
+              >
+                <IconGithub className="h-4 w-4 shrink-0" aria-hidden />
+                GitHub
+                <span aria-hidden>↗</span>
+              </a>
+            ) : null}
+          </p>
         ) : null}
       </div>
     </article>

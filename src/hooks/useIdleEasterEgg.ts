@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 
 const SESSION_KEY = 'agent-idle-egg-last'
-const IDLE_MS_MIN = 45_000
-const IDLE_MS_MAX = 90_000
-const COOLDOWN_MS = 8 * 60 * 1000
+
+/** Production: long idle + cooldown so the footer trace is a rare easter egg. Dev: shorter so you can verify without ~1 min of absolute stillness. */
+const DEV = import.meta.env.DEV
+const IDLE_MS_MIN = DEV ? 12_000 : 45_000
+const IDLE_MS_MAX = DEV ? 25_000 : 90_000
+const COOLDOWN_MS = DEV ? 90_000 : 8 * 60 * 1000
 
 function randomBetween(min: number, max: number) {
   return min + Math.floor(Math.random() * (max - min + 1))
@@ -14,7 +17,8 @@ function motionReduced() {
 }
 
 /**
- * After random idle (45–90s), increments `episodeId` at most once per cooldown window (8 minutes).
+ * After random idle (45–90s in production; ~12–25s in dev), increments `episodeId` at most once per
+ * cooldown window (8 minutes in production; 90s in dev). Resets on pointer/scroll/key/touch.
  * Resets on user activity. Disabled entirely when `prefers-reduced-motion: reduce`.
  */
 export function useIdleEasterEgg(): number {

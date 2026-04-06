@@ -6,6 +6,8 @@ export type BadgeScheme = {
   headingIcon: string
   subtleIcon: string
   sectionLabel: string
+  /** List bullet markers (e.g. project highlights / stack bullets). */
+  listMarker: string
   submitButton: string
   dotIdle: string
   dotActive: string
@@ -18,6 +20,7 @@ export const BADGE_SCHEMES: readonly BadgeScheme[] = [
     headingIcon: 'text-orange',
     subtleIcon: 'text-orange/70',
     sectionLabel: 'text-orange',
+    listMarker: '[&_li::marker]:text-orange/70',
     submitButton:
       'bg-orange text-navy hover:bg-orange-dim focus-visible:outline-orange',
     dotIdle:
@@ -31,6 +34,7 @@ export const BADGE_SCHEMES: readonly BadgeScheme[] = [
     headingIcon: 'text-blue',
     subtleIcon: 'text-blue/70',
     sectionLabel: 'text-blue',
+    listMarker: '[&_li::marker]:text-blue/70',
     submitButton:
       'bg-blue text-navy hover:bg-blue-dim focus-visible:outline-blue',
     dotIdle:
@@ -43,6 +47,7 @@ export const BADGE_SCHEMES: readonly BadgeScheme[] = [
     headingIcon: 'text-green',
     subtleIcon: 'text-green/70',
     sectionLabel: 'text-green',
+    listMarker: '[&_li::marker]:text-green/70',
     submitButton:
       'bg-green text-navy hover:bg-green-dim focus-visible:outline-green',
     dotIdle:
@@ -56,6 +61,7 @@ export const BADGE_SCHEMES: readonly BadgeScheme[] = [
     headingIcon: 'text-violet',
     subtleIcon: 'text-violet/70',
     sectionLabel: 'text-violet',
+    listMarker: '[&_li::marker]:text-violet/70',
     submitButton:
       'bg-violet text-navy hover:bg-violet-dim focus-visible:outline-violet',
     dotIdle:
