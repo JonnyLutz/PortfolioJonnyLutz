@@ -17,7 +17,7 @@
 
 ---
 
-This repo is the **current** portfolio: a React + Vite single-page site with a sticky sidebar, main column, and responsive mobile nav. If you land on the older purple / Semantic UI version, you’re looking at **`Semantic-Portfolio`**, **`jonnylutz-portfolio`**, or a deploy that still builds from that codebase — **ship from here** (`dist/` after `npm run build`) to update the live site.
+This repo is the **current** portfolio: a React + Vite single-page site with a sticky sidebar, main column, and responsive mobile nav. **Ship from here** (`dist/` after `npm run build`) to update the live site.
 
 ## What’s inside
 
@@ -64,6 +64,6 @@ Build **`dist/`** from this project and point your host (Firebase Hosting, Ampli
 
 <div align="center">
 
-Built with curiosity and too many keyboard shortcuts.
+Built with Caffeine and Love.
 
 </div>
