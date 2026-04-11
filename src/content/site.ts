@@ -28,6 +28,7 @@ export const site = {
       period: '2022 — Present',
       title: 'Front-End Engineer II',
       company: 'Amazon Web Services',
+      location: 'Seattle, WA',
       summary:
         'Ship customer-facing features for the AWS IoT Console across 10+ sub-consoles. Stack: React/TypeScript, AWS APIs, CI/CD, and test automation.',
       bullets: [
@@ -58,6 +59,7 @@ export const site = {
       period: '2020 — 2022',
       title: 'Programmer & Analyst',
       company: 'Huntington National Bank',
+      location: 'Columbus, OH',
       summary:
         'Developed customer-facing web applications for account origination and related journeys. Collaborated with business and analytics partners on experiments and instrumentation so we could measure conversion and iterate with evidence.',
       bullets: [],
@@ -67,6 +69,7 @@ export const site = {
       period: '2015 — 2020',
       title: 'Science Educator',
       company: 'Southeast Asia',
+      location: 'Multiple countries',
       summary:
         'Designed and delivered science instruction for diverse ESL learners. Strengthened skills in facilitation, written explanation, and adapting material to different audiences.',
       bullets: [],
@@ -76,6 +79,7 @@ export const site = {
       period: '2012 — 2015',
       title: 'Design Engineer',
       company: 'The Ohio State University — Aerospace Research Center',
+      location: 'Columbus, OH',
       summary:
         'Designed, assembled and tested components for gas turbine research programs. Built and documented hardware setups; installed and calibrated a large set of precision sensors for experiments.  Performed high stakes experiments under tight deadlines.',
       bullets: [],
@@ -85,6 +89,7 @@ export const site = {
       period: '2009 — 2012',
       title: 'Manufacturing Engineer',
       company: 'Honda of America',
+      location: 'Marysville, OH',
       summary:
         'Precision tooling and continuous improvement projects in high-volume automotive manufacturing. Managed a substantial annual tooling budget, led cost initiatives with meaningful savings, and upheld strict quality standards through a major model change.',
       bullets: [],
@@ -94,6 +99,7 @@ export const site = {
       period: '2007 — 2008',
       title: 'Production Engineering Intern',
       company: 'Toyota Motor Manufacturing',
+      location: 'Georgetown, KY',
       summary:
         'Multi-plant rotational internship across Toyota manufacturing operations — exposure to production engineering, line processes, and how quality and throughput are balanced at scale.',
       bullets: [],
@@ -106,10 +112,13 @@ export const site = {
     {
       title: 'CyberPugs',
       description:
-        'Interactive AI chatbot experience with a cyberpunk twist: browse an active roster of augmented companions, run a neural-link handshake, then open a live comms session with terminal-style UI, persona copy, and neon glass panels.',
+        'Cyberpunk SPA with nine unique CyberPug hacker-dog personas: browse the roster, run the link ceremony, and open a Bedrock-backed conversational chat with terminal-style UI and neon glass panels. Players earn techno pug prizes for a toy box and unlock a surprise after collecting the full set.',
       stackBullets: [
-        'React 18, TypeScript, Vite, and React Router — separate routes for catalog browsing, device linking, and per-agent chat.',
-        'Hosted on AWS Amplify; model access via AWS Bedrock, OpenRouter, and GrokAI.',
+        'React 18, TypeScript, Vite, and React Router — catalog, neural-link flow, and per-agent chat routes.',
+        'Front end on AWS Amplify; API and chat backend on AWS App Runner.',
+        'Conversational AI through the Amazon Bedrock API for the in-app chat experience.',
+        'Progression: collectible techno pug prizes for the toy box, with a hidden unlock when the collection is complete.',
+        'Imagery generated with SuperGrok.',
       ],
       image: '/project-cyberpugs.png',
       imageAlt: 'CyberPugs chat session with Turbo Snort: cockpit backdrop, pug avatar, and terminal-style message panel.',

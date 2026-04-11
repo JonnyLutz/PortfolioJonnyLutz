@@ -42,6 +42,9 @@ export function ExperienceSection() {
                     <span className="text-slate"> · </span>
                     <span className="text-slate">{job.company}</span>
                   </h3>
+                  {job.location ? (
+                    <p className="mt-1 font-mono text-xs tracking-wide text-slate/90">{job.location}</p>
+                  ) : null}
                   <p className="mt-2 text-sm leading-relaxed text-slate">{job.summary}</p>
                   {job.bullets.length > 0 ? (
                     <ul className="mt-3 list-none space-y-2 text-sm text-slate">
