@@ -20,6 +20,9 @@ function schemeIndexForBackground(bgIndex: number): BadgeSchemeIndex {
 /** How long each robot background + accent stays visible before crossfading to the next. */
 const BG_CYCLE_MS = 7_000
 
+/** Set `true` to turn UI chrome click sounds back on (theme toggle + next background). */
+const CHROME_UI_SOUND_ENABLED = false
+
 /** Reused so browsers don’t throttle one-shot AudioContexts. */
 let chromeUiAudioContext: AudioContext | null = null
 
@@ -58,6 +61,7 @@ function scheduleUiBlip(
 
 /** Short two-tone blip — only call from a user gesture (click). */
 function playRobotAdvanceSound() {
+  if (!CHROME_UI_SOUND_ENABLED) return
   const ctx = getChromeUiAudioContext()
   if (!ctx) return
   void ctx.resume().catch(() => {})
@@ -69,6 +73,7 @@ function playRobotAdvanceSound() {
 
 /** Theme toggle: brighter ascending pair for light, lower mellow pair for dark. */
 function playThemeToggleSound(mode: 'light' | 'dark') {
+  if (!CHROME_UI_SOUND_ENABLED) return
   const ctx = getChromeUiAudioContext()
   if (!ctx) return
   void ctx.resume().catch(() => {})
