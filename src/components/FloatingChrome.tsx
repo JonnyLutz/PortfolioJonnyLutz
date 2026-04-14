@@ -20,6 +20,9 @@ function schemeIndexForBackground(bgIndex: number): BadgeSchemeIndex {
 /** How long each robot background + accent stays visible before crossfading to the next. */
 const BG_CYCLE_MS = 7_000
 
+/** Set `true` to resume automatic background + badge accent cycling. Manual controls still work when `false`. */
+const BG_AUTO_CYCLE_ENABLED = false
+
 /** Set `true` to turn UI chrome click sounds back on (theme toggle + next background). */
 const CHROME_UI_SOUND_ENABLED = false
 
@@ -181,7 +184,7 @@ export function FloatingChrome() {
   }, [bgActive, setSchemeIndex])
 
   useEffect(() => {
-    if (reduceMotion) return
+    if (reduceMotion || !BG_AUTO_CYCLE_ENABLED) return
     const id = window.setInterval(() => {
       setBgActive((prev) => (prev + 1) % BG_IMAGES.length)
     }, BG_CYCLE_MS)
