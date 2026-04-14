@@ -30,11 +30,11 @@ export const site = {
       company: 'Amazon Web Services',
       location: 'Seattle, WA',
       summary:
-        'Ship customer-facing features for the AWS IoT Console across 10+ sub-consoles. Stack: React/TypeScript, AWS APIs, CI/CD, and test automation.',
+        'Ship customer-facing features for the AWS IoT Console across 10+ sub-consoles. Stack: React, TypeScript, AWS APIs, CI/CD, and test automation.',
       bullets: [
-        'Partnering with UX, PM, and peer engineering teams on feature development, testing, deployment and production support.',
-        'Championing AI-assisted workflows, development processes, and early adoption of state of the art productivity tools.',
-        'Investing in tools and processes to move towards agentic development and production support.',
+        'Partner with UX, PM, and peer engineering teams on feature development, testing, deployment, and production support.',
+        'Champion AI-assisted workflows, development processes, and early adoption of state-of-the-art productivity tools.',
+        'Invest in tools and processes that move the team toward agentic development and production support.',
       ],
       stack: [
         'React',
@@ -81,7 +81,7 @@ export const site = {
       company: 'The Ohio State University — Aerospace Research Center',
       location: 'Columbus, OH',
       summary:
-        'Designed, assembled and tested components for gas turbine research programs. Built and documented hardware setups; installed and calibrated a large set of precision sensors for experiments.  Performed high stakes experiments under tight deadlines.',
+        'Designed, assembled, and tested components for gas turbine research programs. Built and documented hardware setups; installed and calibrated a large set of precision sensors for experiments. Performed high-stakes experiments under tight deadlines.',
       bullets: [],
       stack: ['Design & Manufacturing', 'Instrumentation', 'Technical documentation', 'Mechanical engineering'],
     },
@@ -91,7 +91,7 @@ export const site = {
       company: 'Honda of America',
       location: 'Marysville, OH',
       summary:
-        'Precision tooling and continuous improvement projects in high-volume automotive manufacturing. Managed a substantial annual tooling budget, led cost initiatives with meaningful savings, and upheld strict quality standards through a major model change.',
+        'Focused on precision tooling and continuous improvement projects in high-volume automotive manufacturing. Managed a substantial annual tooling budget, led cost initiatives with meaningful savings, and upheld strict quality standards through a major model change.',
       bullets: [],
       stack: ['Manufacturing', 'Quality', 'Cost reduction', 'Lean manufacturing', 'Continuous improvement', 'Kaizen'],
     },
@@ -101,7 +101,7 @@ export const site = {
       company: 'Toyota Motor Manufacturing',
       location: 'Georgetown, KY',
       summary:
-        'Multi-plant rotational internship across Toyota manufacturing operations — exposure to production engineering, line processes, and how quality and throughput are balanced at scale.',
+        'Completed a multi-plant rotational internship across Toyota manufacturing operations, with exposure to production engineering, line processes, and how quality and throughput are balanced at scale.',
       bullets: [],
       stack: ['Manufacturing', 'Internship'],
     },
@@ -112,9 +112,9 @@ export const site = {
     {
       title: 'CyberPugs',
       description:
-        'Cyberpunk SPA with nine unique CyberPug hacker-dog personas: browse the roster, run the link ceremony, and open a Bedrock-backed conversational chat with terminal-style UI and neon glass panels. Players earn techno pug prizes for a toy box and unlock a surprise after collecting the full set.',
+        'Cyberpunk SPA with nine unique CyberPug hacker-dog personas: browse the roster, start a Bedrock-backed AI chat. Players earn techno pug prizes for a toy box and unlock a surprise after collecting the full set.',
       stackBullets: [
-        'React 18, TypeScript, Vite, and React Router — catalog, neural-link flow, and per-agent chat routes.',
+        'React 18, TypeScript, Vite, and React Router.',
         'Front end on AWS Amplify; API and chat backend on AWS App Runner.',
         'Conversational AI through the Amazon Bedrock API for the in-app chat experience.',
         'Progression: collectible techno pug prizes for the toy box, with a hidden unlock when the collection is complete.',
