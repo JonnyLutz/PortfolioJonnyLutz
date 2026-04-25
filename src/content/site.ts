@@ -3,7 +3,7 @@
 export const site = {
   name: 'Jonathan Lutz',
   handle: 'JonnyLutz',
-  title: 'Front-End Engineer',
+  title: 'Software Engineer',
   company: 'Amazon Web Services',
   tagline: 'Agentic software development and production support for the AWS IoT Console.',
 
@@ -110,6 +110,18 @@ export const site = {
   /** Add `href` + `hrefLabel` for live demos; optional `image` + `imageAlt` (file in /public). */
   projects: [
     {
+      title: 'Bedrock Converse Playground',
+      description:
+        'Chat UI for experimenting with Amazon Bedrock foundation models. Pick a model, start a conversation, and compare responses across Claude, Nova, Llama, and others — all through the Bedrock Converse API.',
+      stackBullets: [
+        'React 18, TypeScript, Vite.',
+        'Express backend calling the Amazon Bedrock Converse API.',
+        'Multi-model support — switch between any model enabled in your Bedrock console.',
+        'Configurable via environment variables; deployable to App Runner, EC2, or containers.',
+      ],
+      repoHref: 'https://github.com/JonnyLutz/bedrock-converse-playground',
+    },
+    {
       title: 'CyberPugs',
       description:
         'Cyberpunk SPA with nine unique CyberPug hacker-dog personas: browse the roster, start a Bedrock-backed AI chat. Players earn techno pug prizes for a toy box and unlock a surprise after collecting the full set.',
@@ -147,7 +159,7 @@ export const site = {
 
   contact: {
     headline: "What's next?",
-    body: "I'm not actively job searching. Open to the right conversation.",
+    body: "I'm exploring new opportunities. Let's connect.",
     cta: 'Email me',
   },
 }
