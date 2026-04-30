@@ -1,15 +1,11 @@
-import { site } from '../content/site'
+'use client'
 
-const LINKS_ALL = [
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#contact', label: 'Contact' },
-] as const
+import { site } from '@/src/content/site'
+import { deriveNavItems } from '@/src/lib/deriveNavItems'
 
 /** Horizontal jump links — sidebar nav is hidden on small screens. */
 export function MobileNav() {
-  const links = LINKS_ALL.filter((link) => site.showProjectsSection || link.href !== '#projects')
+  const nav = deriveNavItems(site)
 
   return (
     <nav
@@ -17,10 +13,10 @@ export function MobileNav() {
       aria-label="In-page"
     >
       <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-slate">
-        {links.map(({ href, label }) => (
-          <li key={href}>
+        {nav.map(({ id, label }) => (
+          <li key={id}>
             <a
-              href={href}
+              href={`#${id}`}
               className="transition hover:text-blue focus-visible:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
             >
               {label}

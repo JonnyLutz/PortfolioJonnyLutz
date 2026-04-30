@@ -1,5 +1,8 @@
-import { site } from '../content/site'
-import { AgentIdleGhost } from './AgentIdleGhost'
+'use client'
+
+import { site } from '@/src/content/site'
+import { AgentIdleGhost } from '@/src/components/AgentIdleGhost'
+import { useIdleEpisodeId } from '@/src/components/ClientProviders'
 
 function IconGithub({ className }: { className?: string }) {
   return (
@@ -24,7 +27,9 @@ type SiteFooterProps = {
   idleEpisodeId?: number
 }
 
-export function SiteFooter({ idleEpisodeId = 0 }: SiteFooterProps) {
+export function SiteFooter({ idleEpisodeId }: SiteFooterProps) {
+  const contextEpisodeId = useIdleEpisodeId()
+  const episodeId = idleEpisodeId ?? contextEpisodeId
   const year = new Date().getFullYear()
 
   return (
@@ -34,7 +39,7 @@ export function SiteFooter({ idleEpisodeId = 0 }: SiteFooterProps) {
       aria-label="Site footer"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-3.5 lg:px-12">
-        <AgentIdleGhost episodeId={idleEpisodeId} />
+        <AgentIdleGhost episodeId={episodeId} />
         <div className="flex w-full flex-col items-center justify-between gap-3 sm:flex-row sm:gap-4">
           <p
             className="flex flex-wrap items-center justify-center gap-x-2.5 font-mono text-sm font-medium uppercase leading-snug tracking-[0.14em] text-slate sm:justify-start"

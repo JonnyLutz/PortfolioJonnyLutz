@@ -5,13 +5,19 @@ export const site = {
   handle: 'JonnyLutz',
   title: 'Software Engineer',
   company: 'Amazon Web Services',
-  tagline: 'Agentic software development and production support for the AWS IoT Console.',
+  tagline: 'Applied AI Solutions @ AWS',
 
   /** Footer line (city / region). */
   location: 'Seattle, WA',
 
   /** Set `true` to show [ProjectsSection](src/components/ProjectsSection.tsx) and nav link. */
   showProjectsSection: true,
+
+  /** Path to downloadable résumé PDF (file lives in /public). */
+  resumePdfPath: '/resume-jonathan-lutz.pdf',
+
+  /** Set `true` to show the resume download icon in the sidebar. */
+  showResumeDownload: false,
 
   links: {
     github: 'https://github.com/JonnyLutz',
@@ -21,6 +27,8 @@ export const site = {
 
   about: [
     "I build front-end features for the AWS IoT Console, supporting production workloads that scale to billions of global devices. Currently, I'm reimagining how software is built in the era of agentic AI.",
+    "My path to software started in mechanical engineering — manufacturing at Honda and Toyota, aerospace research at Ohio State, and five years teaching science across Southeast Asia. Each chapter sharpened a different skill: precision, systems thinking, and the ability to explain complex ideas clearly.",
+    "These days I'm focused on agentic AI workflows and building tools that let engineers ship faster. I enjoy side projects that blend data, real-time APIs, and polished UI — from health dashboards to sports analytics apps.",
   ],
 
   experience: [
@@ -111,6 +119,7 @@ export const site = {
   projects: [
     {
       title: 'Bedrock Converse Playground',
+      hidden: true,
       description:
         'Chat UI for experimenting with Amazon Bedrock foundation models. Pick a model, start a conversation, and compare responses across Claude, Nova, Llama, and others — all through the Bedrock Converse API.',
       stackBullets: [
@@ -154,6 +163,20 @@ export const site = {
       href: 'https://main.d124ldfr70a9je.amplifyapp.com',
       hrefLabel: 'Visit live site',
       repoHref: 'https://github.com/JonnyLutz/Data4Life',
+    },
+    {
+      title: 'Buckeye Bets',
+      hidden: true,
+      description:
+        'Sports analytics app for tracking bets, modeling outcomes, and surfacing value across college and pro matchups. Combines live odds data with historical stats to support smarter, data-driven picks.',
+      stackBullets: [
+        'React 18, TypeScript, Vite.',
+        'Python backend for odds ingestion, statistical modeling, and pick evaluation.',
+        'Live odds and historical stats via third-party sports data APIs.',
+        'PostgreSQL for bet tracking, bankroll history, and model performance.',
+      ],
+      image: '/project-buckeye-bets.png',
+      imageAlt: 'Screenshot of the Buckeye Bets sports analytics dashboard.',
     },
   ],
 

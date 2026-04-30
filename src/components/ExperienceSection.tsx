@@ -1,5 +1,7 @@
-import { site } from '../content/site'
-import { useBadgeColor } from '../context/BadgeColorContext'
+'use client'
+
+import { site } from '@/src/content/site'
+import { useBadgeColor } from '@/src/context/BadgeColorContext'
 
 function TechTag({ label }: { label: string }) {
   const { scheme } = useBadgeColor()

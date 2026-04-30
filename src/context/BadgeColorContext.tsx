@@ -1,4 +1,5 @@
-/* eslint-disable react-refresh/only-export-components -- provider + hook share one module */
+'use client'
+
 import {
   createContext,
   useCallback,

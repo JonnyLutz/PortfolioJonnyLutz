@@ -1,9 +1,11 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import {
   AGENT_IDLE_SNIPPETS,
   flattenGhostChunks,
   groupGhostRuns,
-} from '../content/agentIdleGhost'
+} from '@/src/content/agentIdleGhost'
 
 const HOLD_MS = 2_200
 const FADE_MS = 900

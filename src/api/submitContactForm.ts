@@ -13,12 +13,12 @@ function errWithCode(message: string, code: string): Error & { code: string } {
 /**
  * POST to Formspree or an AWS Lambda + SES URL (same contract as semantic-portfolio).
  *
- * - `VITE_FORMSPREE_URL` — https://formspree.io/f/xxxxxxxx
- * - `VITE_CONTACT_FORM_URL` — Lambda function URL
+ * - `NEXT_PUBLIC_FORMSPREE_URL` — https://formspree.io/f/xxxxxxxx
+ * - `NEXT_PUBLIC_CONTACT_FORM_URL` — Lambda function URL
  */
 export async function submitContactForm({ name, email, message }: ContactFormPayload): Promise<unknown> {
-  const formspreeUrl = import.meta.env.VITE_FORMSPREE_URL?.trim()
-  const lambdaUrl = import.meta.env.VITE_CONTACT_FORM_URL?.trim()
+  const formspreeUrl = process.env.NEXT_PUBLIC_FORMSPREE_URL?.trim()
+  const lambdaUrl = process.env.NEXT_PUBLIC_CONTACT_FORM_URL?.trim()
 
   const payload = { name, email, message, _replyto: email }
 

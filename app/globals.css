@@ -63,11 +63,6 @@ html.light {
     background-attachment: fixed;
   }
 
-  #root {
-    position: relative;
-    z-index: 1;
-  }
-
   ::selection {
     background: color-mix(in srgb, var(--color-blue) 35%, transparent);
     color: var(--color-navy);
