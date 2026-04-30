@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { site } from '@/src/content/site'
 import { deriveNavItems } from '@/src/lib/deriveNavItems'
+import { RotatingTitle } from '@/src/components/RotatingTitle'
 
 function IconGithub({ className }: { className?: string }) {
   return (
@@ -89,7 +90,7 @@ export function Sidebar() {
               {site.name}
             </a>
           </h1>
-          <h2 className="text-lg font-medium tracking-tight text-slate-light sm:text-xl">{site.title}</h2>
+          <h2 className="text-lg font-medium tracking-tight text-slate-light sm:text-xl"><RotatingTitle /></h2>
           <p className="leading-normal text-slate">{site.tagline}</p>
         </div>
 

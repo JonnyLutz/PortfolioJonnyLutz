@@ -28,7 +28,7 @@ export const site = {
   about: [
     "I build front-end features for the AWS IoT Console, supporting production workloads that scale to billions of global devices. Currently, I'm reimagining how software is built in the era of agentic AI.",
     "My path to software started in mechanical engineering — manufacturing at Honda and Toyota, aerospace research at Ohio State, and five years teaching science across Southeast Asia. Each chapter sharpened a different skill: precision, systems thinking, and the ability to explain complex ideas clearly.",
-    "These days I'm focused on agentic AI workflows and building tools that let engineers ship faster. I enjoy side projects that blend data, real-time APIs, and polished UI — from health dashboards to sports analytics apps.",
+    "These days I'm focused on agentic AI workflows and building tools that let engineers ship faster.",
   ],
 
   experience: [
