@@ -1,5 +1,8 @@
-import { useEffect, useMemo, useState } from 'react'
-import { site } from '../content/site'
+'use client'
+
+import { useEffect, useState } from 'react'
+import { site } from '@/src/content/site'
+import { deriveNavItems } from '@/src/lib/deriveNavItems'
 
 function IconGithub({ className }: { className?: string }) {
   return (
@@ -28,19 +31,21 @@ function IconMail({ className }: { className?: string }) {
   )
 }
 
-const NAV = [
-  { id: 'about', label: 'About' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'contact', label: 'Contact' },
-] as const
+function IconDownload({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  )
+}
 
 export function Sidebar() {
   const [active, setActive] = useState<string>('about')
-  const nav = useMemo(
-    () => NAV.filter((item) => site.showProjectsSection || item.id !== 'projects'),
-    [site.showProjectsSection]
-  )
+  const nav = deriveNavItems(site)
+  const showResume = 'showResumeDownload' in site ? Boolean((site as Record<string, unknown>).showResumeDownload) : false
+  const resumePdfPath = showResume && 'resumePdfPath' in site ? (site as Record<string, unknown>).resumePdfPath as string | undefined : undefined
 
   useEffect(() => {
     const sectionEls = nav.map(({ id }) => document.getElementById(id)).filter(
@@ -151,6 +156,18 @@ export function Sidebar() {
               <IconMail className="h-5 w-5" />
             </a>
           </li>
+          {resumePdfPath && (
+            <li>
+              <a
+                href={resumePdfPath}
+                download
+                className="text-slate transition hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
+                aria-label="Download resume"
+              >
+                <IconDownload className="h-5 w-5" />
+              </a>
+            </li>
+          )}
         </ul>
       </div>
     </header>

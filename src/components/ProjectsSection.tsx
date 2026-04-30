@@ -1,5 +1,8 @@
-import { site } from '../content/site'
-import { useBadgeColor } from '../context/BadgeColorContext'
+'use client'
+
+import Image from 'next/image'
+import { site } from '@/src/content/site'
+import { useBadgeColor } from '@/src/context/BadgeColorContext'
 
 export type ProjectItem = {
   title: string
@@ -16,6 +19,8 @@ export type ProjectItem = {
   repoHref?: string
   image?: string
   imageAlt?: string
+  /** Set `true` to keep the project in code but hide it from the UI. */
+  hidden?: boolean
 }
 
 function IconGithub({ className }: { className?: string }) {
@@ -73,23 +78,21 @@ function ProjectCard({ project }: { project: ProjectItem }) {
               className="block h-44 w-full overflow-hidden rounded-lg border border-slate/25 bg-navy-light/40 transition hover:border-blue/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue sm:h-52 md:h-56 lg:h-60"
               aria-label={`${project.hrefLabel ?? 'Open live demo'} — ${project.title}`}
             >
-              <img
-                src={project.image}
+              <Image
+                src={project.image!}
                 alt={project.imageAlt!}
                 width={1200}
                 height={675}
-                decoding="async"
                 className="h-full w-full object-cover object-top"
               />
             </a>
           ) : (
             <div className="h-44 w-full overflow-hidden rounded-lg border border-slate/25 bg-navy-light/40 sm:h-52 md:h-56 lg:h-60">
-              <img
-                src={project.image}
+              <Image
+                src={project.image!}
                 alt={project.imageAlt!}
                 width={1200}
                 height={675}
-                decoding="async"
                 className="h-full w-full object-cover object-top"
               />
             </div>
@@ -192,7 +195,7 @@ export function ProjectsSection() {
       </h2>
 
       <div className="mt-12 flex flex-col gap-12">
-        {(site.projects as readonly ProjectItem[]).map((project) => (
+        {(site.projects as readonly ProjectItem[]).filter((p) => !p.hidden).map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>

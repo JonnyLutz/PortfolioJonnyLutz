@@ -1,8 +1,11 @@
+'use client'
+
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { toast } from 'sonner'
-import { site } from '../content/site'
-import { getContactErrorCode, submitContactForm } from '../api/submitContactForm'
-import { useBadgeColor } from '../context/BadgeColorContext'
+import { site } from '@/src/content/site'
+import { getContactErrorCode, submitContactForm } from '@/src/api/submitContactForm'
+import { useBadgeColor } from '@/src/context/BadgeColorContext'
+import { validateField, validateForm, type FieldErrors, type ContactFormState } from '@/src/lib/validation'
 
 const fieldClass =
   'w-full rounded-md border border-slate/25 bg-navy-light px-4 py-3 text-sm text-slate-light placeholder:text-slate/60 outline-none transition focus:border-blue/40 focus:ring-2 focus:ring-blue/20'
@@ -14,25 +17,42 @@ function emailFromMailto(href: string) {
 export function ContactSection() {
   const { scheme } = useBadgeColor()
   const displayEmail = emailFromMailto(site.links.email)
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formData, setFormData] = useState<ContactFormState>({ name: '', email: '', message: '' })
+  const [errors, setErrors] = useState<FieldErrors>({})
   const [sending, setSending] = useState(false)
 
   function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+    // Clear error for the field being edited
+    if (errors[name as keyof FieldErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }))
+    }
+  }
+
+  function handleBlur(field: keyof ContactFormState) {
+    const error = validateField(field, formData[field])
+    setErrors((prev) => ({ ...prev, [field]: error }))
   }
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
+
+    // Validate all fields before submission
+    const { errors: formErrors, hasErrors } = validateForm(formData)
+    setErrors(formErrors)
+    if (hasErrors) return
+
     setSending(true)
     try {
       await submitContactForm(formData)
       toast.success("Thanks for reaching out — I'll get back to you soon.")
       setFormData({ name: '', email: '', message: '' })
+      setErrors({})
     } catch (err) {
       if (getContactErrorCode(err) === 'NOT_CONFIGURED') {
         toast.error(
-          'Contact form is not configured. Add VITE_FORMSPREE_URL or VITE_CONTACT_FORM_URL to .env (see .env.example).',
+          'Contact form is not configured. Add NEXT_PUBLIC_FORMSPREE_URL or NEXT_PUBLIC_CONTACT_FORM_URL to .env (see .env.example).',
         )
       } else {
         toast.error(
@@ -94,6 +114,7 @@ export function ContactSection() {
         <form
           id="contact-form"
           onSubmit={handleSubmit}
+          noValidate
           className="scroll-mt-24 space-y-4 md:col-span-7"
         >
           <div>
@@ -108,9 +129,12 @@ export function ContactSection() {
               autoComplete="name"
               value={formData.name}
               onChange={handleChange}
-              required
+              onBlur={() => handleBlur('name')}
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? 'contact-name-error' : undefined}
               className={fieldClass}
             />
+            {errors.name && <p id="contact-name-error" className="text-orange text-xs mt-1">{errors.name}</p>}
           </div>
           <div>
             <label htmlFor="contact-email" className="sr-only">
@@ -124,9 +148,12 @@ export function ContactSection() {
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
-              required
+              onBlur={() => handleBlur('email')}
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'contact-email-error' : undefined}
               className={fieldClass}
             />
+            {errors.email && <p id="contact-email-error" className="text-orange text-xs mt-1">{errors.email}</p>}
           </div>
           <div>
             <label htmlFor="contact-message" className="sr-only">
@@ -138,10 +165,13 @@ export function ContactSection() {
               placeholder="Your message"
               value={formData.message}
               onChange={handleChange}
-              required
+              onBlur={() => handleBlur('message')}
+              aria-invalid={!!errors.message}
+              aria-describedby={errors.message ? 'contact-message-error' : undefined}
               rows={5}
               className={`${fieldClass} resize-none`}
             />
+            {errors.message && <p id="contact-message-error" className="text-orange text-xs mt-1">{errors.message}</p>}
           </div>
           <button
             type="submit"

@@ -1,7 +1,9 @@
+'use client'
+
 import { useEffect, useLayoutEffect, useState } from 'react'
-import { BADGE_SCHEMES, type BadgeSchemeIndex } from '../context/badgeSchemes'
-import { useBadgeColor } from '../context/BadgeColorContext'
-import { useTheme } from '../context/ThemeContext'
+import { BADGE_SCHEMES, type BadgeSchemeIndex } from '@/src/context/badgeSchemes'
+import { useBadgeColor } from '@/src/context/BadgeColorContext'
+import { useTheme } from '@/src/context/ThemeContext'
 
 /** Robot backgrounds from /public (cycle order). */
 const BG_IMAGES = [

@@ -1,9 +1,11 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react'
 
 const SESSION_KEY = 'agent-idle-egg-last'
 
 /** Production: long idle + cooldown so the footer trace is a rare easter egg. Dev: shorter so you can verify without ~1 min of absolute stillness. */
-const DEV = import.meta.env.DEV
+const DEV = process.env.NODE_ENV !== 'production'
 const IDLE_MS_MIN = DEV ? 12_000 : 45_000
 const IDLE_MS_MAX = DEV ? 25_000 : 90_000
 const COOLDOWN_MS = DEV ? 90_000 : 8 * 60 * 1000
@@ -13,6 +15,7 @@ function randomBetween(min: number, max: number) {
 }
 
 function motionReduced() {
+  if (typeof window === 'undefined') return false
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
