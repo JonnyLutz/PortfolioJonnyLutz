@@ -32,6 +32,13 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   authors: [{ name: 'Jonathan Lutz' }],
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://www.jonnylutz.com' },
 }
